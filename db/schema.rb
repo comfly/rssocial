@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20130317174608) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,18 +50,13 @@ ActiveRecord::Schema.define(version: 20130317174608) do
     t.datetime "last_modified", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
     t.datetime "last_scanned"
   end
 
-  create_table "user_category", force: true do |t|
-    t.integer "user_id"
-    t.integer "category_id"
-  end
-
   create_table "user_feeds", force: true do |t|
-    t.integer "user_id_id"
-    t.integer "feed_id_id"
+    t.integer "user_id"
+    t.integer "feed_id"
+    t.integer "category_id"
   end
 
   create_table "users", force: true do |t|

@@ -7,7 +7,7 @@ class CreateEntries < ActiveRecord::Migration
       t.text :summary
       t.text :content
       t.datetime :published, null: false
-      t.string :categories
+      t.string :tags
 
       t.references :feed
       

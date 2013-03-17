@@ -3,8 +3,10 @@ class User < ActiveRecord::Base
   validates :password, presence: true, confirmation: true
   
   has_many :categories
+  
   has_many :user_feeds
   has_many :feeds, through: :user_feeds
+  
   has_many :user_entries
   has_many :entries, through: :user_entries
 end
