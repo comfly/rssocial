@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  read: false
+  starred: false
+
+two:
+  read: false
+  starred: false
