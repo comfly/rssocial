@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130317121838) do
+ActiveRecord::Schema.define(version: 20130317144945) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "entries", force: true do |t|
     t.string   "title"
@@ -40,6 +46,20 @@ ActiveRecord::Schema.define(version: 20130317121838) do
     t.string   "feed_url",      null: false
     t.string   "etag"
     t.datetime "last_modified", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+  end
+
+  create_table "user_feeds", force: true do |t|
+    t.integer "user_id_id"
+    t.integer "feed_id_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email",      null: false
+    t.string   "password",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
