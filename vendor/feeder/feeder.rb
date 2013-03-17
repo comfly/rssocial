@@ -1,11 +1,8 @@
 require 'feedzirra'
 
 module Feeder
-  def get_feedzirra_feed_for_feed(feed)
-    feedzirra_feed = Feedzirra::Feed.fetch_and_parse(feed.feed_url)
-
-    entries = Array.new
-    feedzirra_feed.entires.each do | feedzirra_entry |
+  def get_entries_for_feed(feed)
+    Feedzirra::Feed.fetch_and_parse(feed.feed_url).entires.inject(Array.new) do | entries, feedzirra_entry |
       entry = Entry.new
       entry.feed_id = feed.id
       entry.title = feedzirra_entry.title
@@ -18,7 +15,9 @@ module Feeder
       
       entries << entry
     end
-    
-    feed
+  end
+
+  def get_feedzirra_feed_for_feed(feed)
+
   end
 end
