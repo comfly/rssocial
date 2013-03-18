@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   
   has_many :categories
   
-  has_many :user_feeds
-  has_many :feeds, through: :user_feeds
+  has_many :subscriptions
+  has_many :feeds, through: :subscriptions
   
   has_many :user_entries
   has_many :entries, through: :user_entries

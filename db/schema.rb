@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130317174608) do
+ActiveRecord::Schema.define(version: 20130318101019) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20130317174608) do
     t.text     "summary"
     t.text     "content"
     t.datetime "published",  null: false
-    t.string   "categories"
+    t.string   "tags"
     t.integer  "feed_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20130317174608) do
     t.datetime "last_scanned"
   end
 
-  create_table "user_feeds", force: true do |t|
+  create_table "subscriptions", force: true do |t|
     t.integer "user_id"
     t.integer "feed_id"
     t.integer "category_id"
