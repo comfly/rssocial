@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :email, presence: true, uniqueness: true, length: { minimum: 5, maximum: 120 }, format: { with: /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/ }
+  validates :email, presence: true, uniqueness: true, length: { minimum: 5, maximum: 120 }
   validates :password, presence: true, confirmation: true
   
   has_many :categories, :inverse_of => :user, validate: true, :dependent => :destroy 

@@ -1,4 +1,9 @@
 Rssocial::Application.routes.draw do
+=begin
+  Include the following to debug Feeder.
+  get 'feeder/start'
+=end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
